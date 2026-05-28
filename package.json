@@ -1,0 +1,57 @@
+{
+  "name": "gkeep-clone-backend-nodejs-fastify",
+  "version": "0.1.0",
+  "description": "A note-taking back-end application personal project. Inspired by Google Keep.",
+  "author": {
+    "name": "Syahda Romansyah",
+    "email": "codewithsyahda@gmail.com"
+  },
+  "type": "module",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "tsx --tsconfig ./tsconfig.build.json src/app.ts",
+    "dev:w": "tsx watch --tsconfig ./tsconfig.build.json src/app.ts",
+    "build": "rimraf dist && tsc -p tsconfig.build.json && tsc-alias -p tsconfig.build.json",
+    "start": "node dist/app.js",
+    "lint": "eslint .",
+    "format:c": "prettier -c .",
+    "format:w": "prettier -w .",
+    "test:ci": "vitest run --coverage",
+    "test:w": "vitest --coverage",
+    "typecheck": "tsc -p tsconfig.node.json --noEmit && tsc -p tsconfig.build.json --noEmit",
+    "prepare": "husky"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "^11.1.2",
+      "onFail": "download"
+    }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^21.0.1",
+    "@commitlint/config-conventional": "^21.0.1",
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^24.12.4",
+    "@vitest/coverage-v8": "4.1.7",
+    "eslint": "^10.4.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-unused-imports": "^4.4.1",
+    "globals": "^17.6.0",
+    "husky": "^9.1.7",
+    "jiti": "^2.7.0",
+    "lint-staged": "^17.0.5",
+    "prettier": "3.8.3",
+    "prettier-plugin-organize-imports": "^4.3.0",
+    "rimraf": "^6.1.3",
+    "tsc-alias": "^1.8.17",
+    "tsx": "^4.22.3",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.60.0",
+    "vitest": "^4.1.7"
+  }
+}

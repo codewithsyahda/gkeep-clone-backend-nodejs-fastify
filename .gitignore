@@ -1,0 +1,15 @@
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.temp/
+
+node_modules/
+dist/
+coverage/
+temp/
+
+*.swp
+*.swo
+*.tsbuildinfo
+.DS_Store
+Thumbs.db
