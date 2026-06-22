@@ -8,8 +8,13 @@ dist/
 coverage/
 temp/
 
+.env*
+!.env.example
 *.swp
 *.swo
 *.tsbuildinfo
 .DS_Store
 Thumbs.db
+
+# Prisma
+**/generated/prisma
