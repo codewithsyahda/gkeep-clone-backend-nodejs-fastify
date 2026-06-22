@@ -29,6 +29,10 @@ jobs:
           --health-retries 5
 
     env:
+      NODE_ENV: ci
+      PORT: 5000
+      BETTER_AUTH_SECRET: ${{ secrets.BETTER_AUTH_SECRET }}
+      BETTER_AUTH_URL: http://localhost:5000
       DATABASE_URL: 'postgresql://postgres:postgres@localhost:5432/db_ci?schema=public'
 
     steps:
