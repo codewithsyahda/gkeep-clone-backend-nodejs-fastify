@@ -35,7 +35,7 @@ Below are the core utilities and tools used in this project:
 
 Below are the specifications that are used in this project:
 
-- [Node.js](https://github.com/fastify/fastify) with version 24 LTS or higher
+- [Node.js](https://github.com/nodejs/node) with version 24 LTS or higher
 - [pnpm](https://github.com/pnpm/pnpm) with version 11 or higher
 
 ## Configuration
