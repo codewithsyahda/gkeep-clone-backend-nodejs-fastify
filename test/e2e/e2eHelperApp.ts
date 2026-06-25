@@ -52,6 +52,19 @@ fastify.register(
       },
     });
 
+    fst.get('/health/liveness', async (_request, replay) => {
+      await replay.status(200).send({
+        data: {
+          health: {
+            liveness: {
+              uptime: process.uptime(),
+              timestampz: new Date().toISOString(),
+            },
+          },
+        },
+      });
+    });
+
     fst.delete('/tables', async (_request, replay) => {
       await prismaClient.$transaction([
         prismaClient.account.deleteMany(),
