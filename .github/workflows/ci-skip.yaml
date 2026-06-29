@@ -1,0 +1,20 @@
+name: Continuous Integration
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - README.md
+  push:
+    branches:
+      - main
+    paths:
+      - README.md
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: echo "Only non-logic application source code or non-configuration application files changed. CI is not required."
