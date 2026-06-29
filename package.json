@@ -24,13 +24,15 @@
     "typecheck": "tsc -p tsconfig.node.json --noEmit && tsc -p tsconfig.build.json --noEmit",
     "prepare": "husky"
   },
-  "engines": {
-    "node": ">=24"
-  },
   "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": "24",
+      "onFail": "error"
+    },
     "packageManager": {
       "name": "pnpm",
-      "version": "^11.1.2",
+      "version": "11",
       "onFail": "download"
     }
   },
