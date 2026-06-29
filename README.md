@@ -42,7 +42,9 @@ Below are the specifications that are used in this project:
 
 ### Environment Variables
 
-All required environment variables are hinted in the `.env.example` file. They can be set by creating a `.env.production` file for production mode, a `.env.development` file for development mode, and a `.env.ci` file for CI mode (if they do not already exist) and setting them within it. Or, ENVs can be set in the system-wide environment variables directly on the host machine.
+All required environment variables are hinted in the `.env.example` file. They can be set by creating a `.env.production` file for production mode, a `.env.development` file for development mode, and a `.env.ci` file for CI mode (if they do not already exist) and setting them within it.
+
+ENVs can also be set in the system-wide environment variables directly on the host machine.
 
 ## API Specification Implementation
 
@@ -82,24 +84,34 @@ The Prisma team states that the `prisma migrate deploy` commmand should generall
 
 ### Code Quality
 
+To run TypeScript type-checking:
+
 ```sh
-# For TypeScript type-checking
-pnpm typecheck
+pnpm run typecheck
+```
 
-# For linting all source code files
-pnpm lint
+To linting all source code files:
 
-# For checking all source code files that should be formatted
-pnpm format:c
+```sh
+pnpm run lint
+```
 
-# For formatting all source code files
-pnpm format:w
+To checking all source code files that should be formatted:
+
+```sh
+pnpm run format:c
+```
+
+To format all source code files:
+
+```sh
+pnpm run format:w
 ```
 
 ### Development
 
 ```sh
-pnpm dev # or `pnpm dev:w` with watch mode
+pnpm run dev # or `pnpm run dev:w` with watch mode
 ```
 
 > Make sure to set all the required environment variables first before running in development mode. See the [environment variables configuration](#environment-variables) section.
@@ -111,7 +123,7 @@ pnpm dev # or `pnpm dev:w` with watch mode
 The commands below will run unit and integration testing with coverage mode by default.
 
 ```sh
-pnpm test:ci # or `pnpm test:w` with watch mode
+pnpm run test:ci # or `pnpm run test:w` with watch mode
 ```
 
 ### Running E2E Testing
@@ -123,13 +135,13 @@ Before running the two backend applications, provide the required environment va
 Execute the command below to run the real backend:
 
 ```sh
-pnpm build && pnpm start:e2e
+pnpm run build && pnpm run start:e2e
 ```
 
 Open a second terminal and run the command below to run the backend helper:
 
 ```sh
-pnpm dev:e2e
+pnpm run dev:e2e
 ```
 
 The `pnpm start:e2e` and `pnpm dev:e2e` commands will use the same `.env.ci` file by default (if it exists).
@@ -141,13 +153,13 @@ The backend helper is created to manage the state of the database tables during 
 Create a production build:
 
 ```sh
-pnpm build
+pnpm run build
 ```
 
 After building the application, you can start the built application by running the following command:
 
 ```sh
-pnpm start
+pnpm run start
 ```
 
 > Make sure to set all the required environment variables first before running the built application. See the [environment variables configuration](#environment-variables) section.
