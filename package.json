@@ -33,7 +33,7 @@
     "packageManager": {
       "name": "pnpm",
       "version": "11",
-      "onFail": "download"
+      "onFail": "error"
     }
   },
   "devDependencies": {
